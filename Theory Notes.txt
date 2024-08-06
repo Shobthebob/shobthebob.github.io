@@ -1,0 +1,279 @@
+In CSS, the width and height of an element are not seperated by commas
+        and the y(height) comes before the x(width)... so its [xxx]: Ypx Xpx; 
+
+----------------------------------------------------------------------------------------
+
+-> If an element has multiple class names, the one that was coded later would work
+-> If an element has an id and a class then the id would be given more priority
+-> To make the lower priority element work, use [!important] 
+-> A gif is an <img>
+
+----------------------------------------------------------------------------------------
+
+ class - a unique name given to a tag that has been used multiple times in HTML inorder to specify what you're styling in CSS [class = "<class-name>"]
+ id - a name given to a tag that has been only once in HTML inorder to specify what you're styling in CSS [id = "<id-name>"] 
+ psudo class - used to specify an element (like the first point in a list) [<tag-name>:element]
+ psudo element - used to specify different tags that come under a main (parent) tag are called sibling tabs [<tag-name>::element]
+
+ *adjacent sibling - the tag that comes right after another
+
+----------------------------------------------------------------------------------------
+
+Some Important and confusing css properties:
+
+*every property has inherit as a value which allows any element to inherit that property from its parent element
+
+-> text-align: left/right/center/justify (justify - Stretches the lines so that each line has equal width)
+-> text-decoration: wavy/dashed/dotted/double/solid/none overline/underline/line-thorugh
+-> text-indent: indent the first line of a paragraph
+-> text-transform: uppercase/lowercase/capitalize
+-> font-family: family-name(arial, courier)/generic-family(serif, sans-serif) (*if a font name contains a whiespace, it must be quoted.)
+-> font-style: italic/normal/oblique
+-> font-weight: bold
+
+----------------------------------------------------------------------------------------
+
+Box models
+
+1) Width/Height   - Dimensions of the element. They dont change upon resizing the window. 
+                  - Total width/height of an element = 2(border w/h + w/h pading) + w/h of the element   
+2) Padding        - Space around the element
+3) Border         - Area around the entire element [boder: <size> <style> <color>]; (style examp- solid, dotted, dashed etc)
+                  - they are built upon the padding space. if there is no padding then the border will create its own.
+4) Margin         - Space between different elements (outside the element)
+
+----------------------------------------------------------------------------------------
+
+i) Inline boxes/elements - Those types of boxes that occupy only that much amount of space that is needed for its content
+                         - Cause no line break 
+                         - Paddings and Margins are only applied horizontally
+                         - Examples - a, img, button etc
+                         - [display: inline] is used to convert a block level element to an inline level
+ii) Block level boxes/elements - Elements seem to be presented as blocks  
+                               - occupy all the space that they can horizontally
+                               - it causes the elements to stack on top of one another 
+                               - Examples - header, p, footer, li etc
+                               - [display: box] is used to convert an inline element to block level
+iii) Inline-Block level boxes/elemts - Looks like inline, acts like block level
+                                     - Occupies only that much space thats needed
+                                     - Causes no line breaks
+                                     - Box model can be used 
+                                     - [display: inline-block]
+
+----------------------------------------------------------------------------------------
+
+Positioning [position: <type-of-position>]
+
+1) Static position - the default position that all of your elements will have when put on the web page
+2) Relative position - This makes changes to the element with respect to its current position but outside the normal flow.
+3) Absolute position - This completely removes an element from the normal flow and places it with respect to a parent 
+                       relative element
+4) Fixed position - Positions itself with respect to the monitor and moves with the page as you scroll and doesn't care 
+                    about any relative parent element.
+5) Sticky position - 
+
+An abolutely positioned element will always be absolutely positioned with respect to its first relative parent element.
+The first parent element is the element which your element directly comes under.
+
+------------------------------------------------------------------------------------------
+
+Layout - How we arange elements like text, images etc on a web page
+       - It gives the page a visual strcture 
+       - They are made out of different componenets where each component has its own layout (Component layout)
+
+3 Ways of building layouts with css:
+        1) Float Layouts - An old method that takes an element out of the normal flow and makes it float around its surrounding elements (float: left, float: right)
+                - When all of a parent element's child elements are floated, the parent element colapses. To prevent that from happening we use a trick called 'The Clearfix Hack'. It's bascially giving the parent element any class name ("clearfix" in most cases) and then styling it with "clear: both"
+        2) Flexbox - laying out elements in a 1-D row. Perfect for component layout
+                - The direction in which these elements are alligned is called the main axis. The perpendicular axis to it is called the cross axis.
+        3) CSS Grid - For laying out elements in a 2-D grid. Perfect for complex layouts 
+                    - use repeat( ) to duplicate values of the different columns
+                    - To position a grid element > gird-row/column: start grid line / end grid line
+
+------------------------------------------------------------------------------------------
+
+Typography: 
+        - Styling text to make it look nice and appealing to the user is called topography
+        - Having a defined range of values for font sizes can help you through your design much quicker 
+        - Having a good 'LETTER SPACING' & 'LINE HEIGHT' is !important 
+
+Some rules for spacing and line height: 
+    > Line height (line spacing) to at least 1.5 times the font size;
+    > Spacing following paragraphs to at least 2 times the font size;
+    > Letter spacing (tracking) to at least 0.12 times the font size;
+    > Word spacing to at least 0.16 times the font size.
+
+
+------------------------------------------------------------------------------------------
+
+Colors:
+        - Choose a Main color (or Primary that'll cover most of the website), a Grey color (or a Secondary color), and an Accent color (to have a contrast and make the website more appealing). This is collectively called the 'Color Palette'
+        - Use Lighter(tints) and Darker (shades) versions of your main, grey and accent colors.
+        - Use different tools for everything (contrast checker.. etc)
+
+------------------------------------------------------------------------------------------
+
+Images:
+        - Use images to support your website’s message and story.
+        - Original photos are recommended. Else use original-looking stock images ( clean and simple ones without the watermark).
+        - Show real people to trigger user emotions
+        - You need not use the entire image, crop it to fit your message
+        - 3 Methods to handle texts on images:
+                1) Darken or brighten image using a gradient
+                2) Put the text in a visible spot on the image
+                3) Put the text in a box and place that box (with some opaticty) on the image.
+        - When using multiple images side by side, make sure that have the exact same dimensions
+        - You can use the filter property on your image to edit it
+
+------------------------------------------------------------------------------------------
+
+Icons: 
+        - Use a good icon pack
+        - Dont mix different icon packs
+        - Use SVG icons (they are vector vased)
+        - Use an icon that matches the ROUNDNESS, WEIGHT, Personality or your website.
+        - Use icons to provide visual assistance to your text. Having just text can make the user not want to read but if you have an icon next to it, it'll make the text better
+        - Neutral icons should have the same color as the text. Having icons of different colors will draw more attention (not a bad thing btw)
+
+------------------------------------------------------------------------------------------
+
+Shadows:
+        - Make your shadows Light
+        - Using shadows for all elements is just dumb
+        - Use small shadows for smaller elements that should stand out
+        - Use large shadows for elements that should really float above the interface
+        - You can use shadows on the hover state of a button to make it seem like you're pulling it towards yourself
+        - You can use glows (colored shadows to give the button a neon sorta effect)
+[Syntax] 
+        box-shadow: <horizontal-right> <vertical-bottom> <blur> <span> <color>;
+
+------------------------------------------------------------------------------------------
+
+Whitespaces:
+        - Give a good amount of whitespace between different sections 
+        - Keep the items in one section a little closer comparitively (law of proximity)
+        - Start with alot of whitespace, then remove as much as you want accordingly
+        - Remember: Too much whitespace looks detached, too little looks too crammed
+        - Big text/icons = more whitespace
+
+------------------------------------------------------------------------------------------
+
+Visual Hierarchy Fundamentals:
+        - Position important elements closer to the top of the page (they'll get more attention)
+        - Use images mindfully (they draw alot of attention)
+        - For text elements, use font-size, font-weight, color, etc to convey importance
+        - Emphasize a section by using bg-colors, shadows, and/or borders
+        - If you wanna emphasize one section/component over the other, de-emphasize the other section/component.
+
+------------------------------------------------------------------------------------------
+
+* Law of Locality: Place the action buttons where they will create the most effect
+* Break up long text with sub-headings, images, block quotes, bullet points, etc.
+* Copying (taking inspiration and implementing good parts of someother website) is totally fine
+* Elements ->(make) components, components -> layouts, layouts -> webpages
+* vh (VIEWPORT HEIGHT) -> is a unit that can be used with the height property to make something visible only to that much amount of the viewport (eg: 100vh = 100% of the windows so basically the entire screen)
+* to make an IMAGE DIMMER, you can add a gray gradient of two same colors using the linear-gradient(<color1>, <color2>) function 
+
+------------------------------------------------------------------------------------------
+
+Responsive Design:
+        = A design that fits all types of screens (mobile, tab, laptops, monitors)
+        = This is not a seperate technology
+
+Big and Important 4 responsive design ingredients:
+
+        1) Fluid Layout:
+                - allow the entire site to adapt to the viewport
+                - use units like % or vw/vh that dynamically size the element with respect to the viewport
+                - use max-width instead of width
+        2) Responsive Units:
+                - Use units like 'rem' that'll change your elements dimension based on the viewport
+                - 'rem' is a unit whose value is dependent on the font-size of html (by default 1rem = 16px)
+        3) Flexible Images:
+                - Use % for dimensions along with max-width
+        4) Media Queries:
+                - Change CSS styles of an element after changing its dimensions to a certain value (this is called a breakpoint)
+
+Desktop-First approach: Build your website layout for bigger screens first and then, using media queries, make it responsive for smaller screens (phones) too
+Phone-First approach: the reverse of desktop-first
+
+------------------------------------------------------------------------------------------
+
+transition attribute: animate the element from one value to another [transition: <which-property> <time> <type(optional)>]
+form tag: Used to store input elements
+* If you use the none property on an element, transitions wont work on it. 
+
+to select a tag based on its attributes:
+        .class[attribute=value]{} /* adding the class name before is optional; do not add space */
+
+------------------------------------------------------------------------------------------
+
+DIFFERENCE btw Visibility, Opacity, Dislay:none;
+
+Opacity - Will only hide the element visually i.e. if its a button, you'll stil be able to click it and get responses
+Visibility - Hides and element visually and also disables all its functions
+Display:none - completely disables the variable and gives up on the space that element takes
+
+------------------------------------------------------------------------------------------
+
+DOM Manipulation: Document Object Model
+    - comes from web APIs which are written in js and are automatically available to us
+    - a structured representation of html documents
+    - allows manipulation of html tags/attributes and css styles in js
+    - automatically created when the page loads
+    - Here is a visual representation of how dom structures an HTML document (hhtthbbh) :
+                                Document
+                                   |
+                                  html
+                                 /    \
+                            head        body
+                             |         /    \
+                           title    tags under body
+
+- Use functions to replace long syntaxes like 'document.querySelector("")..." to help maintain readability in your code.  
+
+------------------------------------------------------------------------------------------
+
+> Handeling html classes using js: classlist (add/remove)
+> Handeling keypress using js (addevenntlistener): 
+        1) Keydown (mostly used) - reads and preforms actions when you pressing down on the key
+        2) keypress - reads and preforms actions while you're holding down the key      
+        3) keyup - reads and preforms actions when you let go of the key   
+> We have to pass in a parameter in the function in the addeventlistener's parameters ('e') which will be 
+
+------------------------------------------------------------------------------------------
+
+OOP Principles (Revised):
+    - Abstraction: Showing the work but not the backend (or the actual working)
+    - Encapsulation: Having private properties and methods in a class that cannot be accessed from the outside.
+    - Inheritance: Using a class' properties and methods in another class
+    - Polymorphism: One thing, many forms (Overloading, Overriding)
+
+OOP in JS work a little differently from your standard OOP:
+    - All objects are linked to a prototype objects. Functions are also objects in js
+    - A prototype is a property that every function (but arrow function) in js has. Arrow functions dont since they dont support the this keyword. This prototype property happens to be of type object. 
+    - Constructors are those methods that can only be called using the 'new' keyword. Basically they can be used to make objects. Their names start with an uppercase (unlike other normal functions) in js.
+    - this keyword works like self from python
+    - if you create a new property/method of the constructor using the prototype and were to use it using an object, the js compiler will first look for that property/method in the object itself. If its not found there then js looks for it in the next prototype of the prototype chain. Use 'obj.hasOwnProperty('<property>') to check if the property is a part of the obj or not.
+
+Prototypes (in Detail):
+    - Prototype Object: - the object that comes with each constructor - (is sorta like a blueprint), contains methods that are accessible to all objects linked to that prototype. <func>.prototype === obj.__proto__ === prototype object.
+    - Prototype Chain - an object accessing a method/property via the property object. Since all objects have a prototype in js, and property object is an object, the property object also has its own prototype - Object.prototype (<Constructor>.prototype). Object is the name of the in-built constructor in js. Since this prototype is also an object, it also has its own prototype - null. This implies that Object.prototype is the highest, standalone prototype in the prototype chain.
+
+ES6 Introduced classes in JS: (very similar to java)
+    - Instance variables === data memebers
+    - This removes the trouble of using the prototype property with the constructor to add a new function everytime. 
+    - constructors in classes have to be named 'constructor'
+    - function declarations inside a class dont require the 'function' keyword
+    - a normal function inside the call would be called an instance function. These are functions that objects/instances/prototype of that class have access to, hence the name.   Adding a 'static' keyword in front of the function name will change the function to a static function -> you'll only be able to access it using the class name like so '<classname>.func( );'
+
+
+------------------------------------------------------------------------------------------
+
+Datastructures in JS:
+
+Linear:
+        > Array
+        > String
+        > Set (its not considered linear)
+        > stacks, queues, linkedlists
