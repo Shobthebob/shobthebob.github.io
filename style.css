@@ -32,7 +32,7 @@ body {
 }
 
 .nav {
-  padding: 10rem 0;
+  padding: 8rem 0;
   font-weight: 700;
   background-color: #eee9e5;
   
@@ -102,7 +102,7 @@ body {
 
 .hero {
   background: #eee9e5;
-  padding: 4rem 4rem 16rem 4rem;
+  padding: 4rem 4rem 8rem 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -115,14 +115,13 @@ body {
   width: 100%;
 }
 
-.hero-txt {
+.hero-txt, .shob-jam {
   font-family: Inconsolata;
   font-weight: 800;
   font-size: 6rem;
   margin: 0 0 4rem 0;
   letter-spacing: 0.06em;
   overflow: hidden;
-  position: relative;
 }
 
 @keyframes typing {
@@ -137,12 +136,17 @@ body {
 
 .shob-jam {
   font-weight: 900;
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
+
 }
 
 .social-icon {
   width: 3rem;
   margin: 0 4rem 0 0;
+}
+
+.github, .linkedIn {
+  transition: fill 300ms; /* Apply transition to the fill property */
 }
 
 .social-link:hover .github, .social-link:hover .linkedIn{
@@ -157,11 +161,33 @@ body {
 
 .hero-img-container {
   text-align: center;
+  justify-content: center;
+  perspective: 1600px;
+}
+
+.tilt-container {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.1s;
 }
 
 .hero-img {
   border-radius: 3px;
   width: 80%;
   height: auto;
-  box-shadow: 23px 23px 100px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  margin: 4rem;
+  box-shadow: -23px 23px 60px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transition: opacity 300ms;
+  pointer-events: none;
 }
