@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+// ------------------------ Auto typing hero txt -----------------------------
+
     const fullTextElement = document.querySelector('.first-half')
     const textElement = document.querySelector('.shob-jam');
     const fullText = fullTextElement.textContent;
@@ -51,9 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     typeFullText();
 
+// ----------------------- Hero Image Tile Card effect ---------------------------    
 
     const tiltContainer = document.querySelector('.tilt-container');
     const shine = document.querySelector('.shine');
+    const heroImage = document.querySelector('.hero-img');
     
     let bounds;
 
@@ -82,12 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         shine.style.transform = `translate3d(${center.x / 4}px, ${center.y / 4}px, 0)`;
     }
 
-    tiltContainer.addEventListener('mouseenter', () => {
+    heroImage.addEventListener('mouseenter', () => {
         bounds = tiltContainer.getBoundingClientRect();
         document.addEventListener('mousemove', rotateToMouse);
     });
 
-    tiltContainer.addEventListener('mouseleave', () => {
+    heroImage.addEventListener('mouseleave', () => {
         document.removeEventListener('mousemove', rotateToMouse);
         tiltContainer.style.transform = '';
         tiltContainer.style.background = '';
