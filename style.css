@@ -273,7 +273,7 @@ body {
 .in-dev {
   position: absolute;
   /* left: 50%; */
-  transform: translate(150%, -300%) rotate(-15deg);
+  transform: translate(150%, -300%) rotate(-5deg);
   background-color: #000000;
   color: white;
   text-align: center;
