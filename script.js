@@ -2,19 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ------------------------ Sticky navigation -----------------------------
 
-    const nav = document.getElementById('nav');
+    const navigation = document.getElementById('nav');
     const heroSection = document.getElementById('hero');
-    const originalNav = nav.innerHTML;
+    const originalNav = navigation.innerHTML;
     const observer = new IntersectionObserver((entries) => {
         console.log('a');
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                nav.classList.add('sticky');
-                nav.innerHTML = '<div title="Back to Top" class="logo-container"><a href="#hero"><img class="logo" src="./img/logo-transparent.png" alt="logo" /></a></div>' + nav.innerHTML;
+                console.log("is not intersecting")
+                navigation.classList.add('sticky');
+                document.querySelector('.logo-container').style.display = 'flex';
             }
             else {
-                nav.classList.remove('sticky');
-                nav.innerHTML = originalNav;
+                navigation.classList.remove('sticky');
+                document.querySelector('.logo-container').style.display = 'none';
             }
         });
     }, {
@@ -22,6 +23,44 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0
     });
     observer.observe(heroSection);
+
+    // ----------------------- Mobile Navigation ---------------------------
+
+    const mobileNavBtn = document.querySelector('.mobile-nav-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeNavBtn = document.querySelector('.close-nav-btn');
+    const body = document.body;
+
+    mobileNavBtn.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+        body.classList.add('no-scroll');
+    });
+
+    closeNavBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        body.classList.remove('no-scroll');
+    });
+
+    const navLinks = document.querySelectorAll('.mobile-nav-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+    });
+
+    mobileNav.addEventListener('transitionend', (event) => {
+        if (!mobileNav.classList.contains('active') && event.propertyName === 'right' && window.matchMedia('(max-width: 725px)').matches) {
+            mobileNavBtn.style.display = 'flex';
+        }
+    });
+    
+    document.addEventListener('click', (event) => {
+        if (!mobileNav.contains(event.target) && !mobileNavBtn.contains(event.target)) {
+            mobileNav.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
+    });
 
     // ----------------------- Smooth Scrolling ---------------------------
 
