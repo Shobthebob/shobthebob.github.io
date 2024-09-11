@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     mobileNav.addEventListener('transitionend', (event) => {
-        if (!mobileNav.classList.contains('active') && event.propertyName === 'right' && window.matchMedia('(max-width: 725px)').matches) {
+        if (!mobileNav.classList.contains('active') && event.propertyName === 'right' && window.matchMedia('(max-width: 795px)').matches) {
             mobileNavBtn.style.display = 'flex';
         }
     });
