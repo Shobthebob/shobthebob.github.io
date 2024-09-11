@@ -216,10 +216,6 @@ body {
   display: none;
 }
 
-.mobile-nav-btn::after {
-  color: inherit;
-}
-
 /* ----------------- HERO ----------------- */
 
 #hero {
@@ -871,6 +867,10 @@ body {
   .nav {
     display: none;
     flex-direction: column;
+  }
+
+  .mobile-nav-btn, .mobile-nav-btn::after{
+    color: #0A0300;
   }
 
   .menu-nav-btn {
