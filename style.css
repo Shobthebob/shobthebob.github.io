@@ -631,7 +631,7 @@ body {
   padding: 0.7rem 1.2rem;
   border-radius: 4px;
   transition: all 0.3s ease;
-  cursor: pointer;
+  cursor:default ;
   position: relative;
 }
 

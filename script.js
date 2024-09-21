@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('hero');
     const originalNav = navigation.innerHTML;
     const observer = new IntersectionObserver((entries) => {
-        console.log('a');
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                console.log("is not intersecting")
                 navigation.classList.add('sticky');
                 document.querySelector('.logo-container').style.display = 'flex';
             }
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------- Smooth Scrolling ---------------------------
 
     const allLinks = document.querySelectorAll("a:link");
-    console.log(allLinks);
     allLinks.forEach(function (link) {
         link.addEventListener("click", function (e) {
             const href = link.getAttribute("href");
@@ -221,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeItem = null;
 
     document.querySelectorAll('.tech-item').forEach(item => {
-        item.addEventListener('click', function (e) {
+        item.addEventListener('mouseenter', function (e) {
             e.stopPropagation();
             if (activeItem === this) {
                 popup.style.display = 'none';
@@ -229,18 +226,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             activeItem = this;
-            console.log(this);
             popupText.textContent = this.getAttribute('data-summary');
 
             const rect = this.getBoundingClientRect();
-            console.log(rect);
             const scrollTop = window.scrollY || document.documentElement.scrollTop;
             popup.className = 'popup bottom';
             popup.style.top = (rect.bottom + scrollTop + 10) + 'px';
-            console.log(rect.bottom + scrollTop + 10);
 
             popup.style.left = rect.left + 'px';
             popup.style.display = 'block';
+        });
+
+        item.addEventListener('mouseleave', function (e) {
+            popup.style.display = 'none';
+            activeItem = null;
         });
     });
 
